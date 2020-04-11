@@ -4,4 +4,14 @@ const request = require("request");
 
 const app = express();
 
+// app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/Signup.html");
+});
+
+// app.post("/signUp", (req, res) => {});
+
 app.listen(3000, () => console.log("Server is runnig on port 3000"));
